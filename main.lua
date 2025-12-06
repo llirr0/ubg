@@ -557,15 +557,13 @@ function Kavo.CreateLib(kavName, themeList)
             sectionElListing.Padding = UDim.new(0, 3)
 
             
-        coroutine.wrap(function()
-            while wait() do
-                sectionFrame.BackgroundColor3 = themeList.Background
-                sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
-                tabButton.BackgroundColor3 = themeList.SchemeColor
-                sectionName.TextColor3 = themeList.TextColor
-            end
-        end)()
+
+			sectionFrame.BackgroundColor3 = themeList.Background
+			sectionHead.BackgroundColor3 = themeList.SchemeColor
+			tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
+			tabButton.BackgroundColor3 = themeList.SchemeColor
+			sectionName.TextColor3 = themeList.TextColor
+
 
             local function updateSectionFrame()
                 local innerSc = sectionElListing.AbsoluteContentSize
