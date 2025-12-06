@@ -556,12 +556,17 @@ function Kavo.CreateLib(kavName, themeList)
             sectionElListing.SortOrder = Enum.SortOrder.LayoutOrder
             sectionElListing.Padding = UDim.new(0, 3)
 
-            
+        tabButton.Active = false   
         coroutine.wrap(function()
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = themeList.TextColor
+                -- ЕСЛИ ВКЛАДКА АКТИВНА - ЧЕРНЫЙ, ИНАЧЕ ЖЕЛТЫЙ
+				if tabButton.Active then
+				    tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)      -- Черный
+				else
+				    tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)  -- Желтый
+				end
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end
