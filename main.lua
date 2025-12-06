@@ -415,15 +415,6 @@ function Kavo.CreateLib(kavName, themeList)
 		Objects[tabButton] = "TextColor3"
 		tabButton.TextSize = 14.000
 		tabButton.BackgroundTransparency = 1
-		
-		tabButton.MouseButton1Click:Connect(function()
-		    for _, otherTab in pairs(tabFrames:GetChildren()) do
-		        if otherTab:IsA("TextButton") then
-		            otherTab.TextColor3 = Color3.fromRGB(255, 255, 0)
-		        end
-		    end
-		    tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-		end)
 
 
         if first then
