@@ -411,7 +411,7 @@ function Kavo.CreateLib(kavName, themeList)
 		tabButton.AutoButtonColor = false
 		tabButton.Font = Enum.Font.Gotham
 		tabButton.Text = tabName
-		tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
 		Objects[tabButton] = "TextColor3"
 		tabButton.TextSize = 14.000
 		tabButton.BackgroundTransparency = 1
@@ -435,31 +435,29 @@ function Kavo.CreateLib(kavName, themeList)
         page.ChildAdded:Connect(UpdateSize)
         page.ChildRemoved:Connect(UpdateSize)
 
-        tabButton.MouseButton1Click:Connect(function()
-            UpdateSize()
-            for i,v in next, Pages:GetChildren() do
-                v.Visible = false
-            end
-            page.Visible = true
-            for i,v in next, tabFrames:GetChildren() do
-                if v:IsA("TextButton") then
-                    if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
-                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-                    end 
-                    if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
-                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
-                    end 
-                    Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2)
-                end
-            end
-            if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
-                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
-            end 
-            if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
-                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-            end 
-            Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2)
-        end)
+		tabButton.MouseButton1Click:Connect(function()
+		    UpdateSize()
+		    for i,v in next, Pages:GetChildren() do
+		        v.Visible = false
+		    end
+		    page.Visible = true
+		    
+		    -- Для активной вкладки - черный текст на желтом фоне
+		    if themeList.SchemeColor == Color3.fromRGB(255,255,0) then -- Если схема желтая
+		        Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2) -- Черный текст
+		    end 
+		    Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2) -- Показать желтый фон
+		    
+		    -- Для неактивных вкладок - желтый текст на прозрачном фоне
+		    for i,v in next, tabFrames:GetChildren() do
+		        if v:IsA("TextButton") and v ~= tabButton then
+		            if themeList.SchemeColor == Color3.fromRGB(255,255,0) then
+		                Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255,255,0)}, 0.2) -- Желтый текст
+		            end
+		            Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2) -- Скрыть фон
+		        end
+		    end
+		end)
         local Sections = {}
         local focusing = false
         local viewDe = false
