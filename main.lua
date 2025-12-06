@@ -416,15 +416,19 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.TextSize = 14.000
         tabButton.BackgroundTransparency = 1
 
-        if first then
-            first = false
-            page.Visible = true
-            tabButton.BackgroundTransparency = 0
-            UpdateSize()
-        else
-            page.Visible = false
-            tabButton.BackgroundTransparency = 1
-        end
+		if first then
+		    first = false
+		    page.Visible = true
+		    tabButton.BackgroundTransparency = 0
+		    -- Черный текст для активной (первой) вкладки
+		    tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		    UpdateSize()
+		else
+		    page.Visible = false
+		    tabButton.BackgroundTransparency = 1
+		    -- Желтый текст для неактивных вкладок
+		    tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
+		end
 
         UICorner.CornerRadius = UDim.new(0, 5)
         UICorner.Parent = tabButton
@@ -434,31 +438,23 @@ function Kavo.CreateLib(kavName, themeList)
         page.ChildAdded:Connect(UpdateSize)
         page.ChildRemoved:Connect(UpdateSize)
 
-        tabButton.MouseButton1Click:Connect(function()
-            UpdateSize()
-            for i,v in next, Pages:GetChildren() do
-                v.Visible = false
-            end
-            page.Visible = true
-            for i,v in next, tabFrames:GetChildren() do
-                if v:IsA("TextButton") then
-                    if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
-                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-                    end 
-                    if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
-                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
-                    end 
-                    Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2)
-                end
-            end
-            if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
-                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
-            end 
-            if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
-                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-            end 
-            Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2)
-        end)
+		tabButton.MouseButton1Click:Connect(function()
+		    UpdateSize()
+		    for i,v in next, Pages:GetChildren() do
+		        v.Visible = false
+		    end
+		    page.Visible = true
+		    for i,v in next, tabFrames:GetChildren() do
+		        if v:IsA("TextButton") then
+		            -- Желтый текст для неактивных вкладок
+		            Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255, 255, 0)}, 0.2)
+		            Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2)
+		        end
+		    end
+		    -- Черный текст для активной вкладки
+		    Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0, 0, 0)}, 0.2)
+		    Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2)
+		end)
         local Sections = {}
         local focusing = false
         local viewDe = false
@@ -467,7 +463,6 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 page.BackgroundColor3 = themeList.Background
                 page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
-                tabButton.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
             end
         end)()
@@ -557,13 +552,15 @@ function Kavo.CreateLib(kavName, themeList)
             sectionElListing.Padding = UDim.new(0, 3)
 
             
-
-			sectionFrame.BackgroundColor3 = themeList.Background
-			sectionHead.BackgroundColor3 = themeList.SchemeColor
-			tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
-			tabButton.BackgroundColor3 = themeList.SchemeColor
-			sectionName.TextColor3 = themeList.TextColor
-
+        coroutine.wrap(function()
+            while wait() do
+                sectionFrame.BackgroundColor3 = themeList.Background
+                sectionHead.BackgroundColor3 = themeList.SchemeColor
+                tabButton.TextColor3 = themeList.TextColor
+                tabButton.BackgroundColor3 = themeList.SchemeColor
+                sectionName.TextColor3 = themeList.TextColor
+            end
+        end)()
 
             local function updateSectionFrame()
                 local innerSc = sectionElListing.AbsoluteContentSize
