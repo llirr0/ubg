@@ -63,7 +63,7 @@ local themeStyles = {
         SchemeColor = Color3.fromRGB(255, 255, 0),
         Background = Color3.fromRGB(0, 0, 0),
         Header = Color3.fromRGB(0, 0, 0),
-        TextColor = Color3.fromRGB(255,255,255),
+        TextColor = Color3.fromRGB(0, 0, 0),
         ElementColor = Color3.fromRGB(20, 20, 20)
     },
     LightTheme = {
@@ -411,7 +411,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
-        tabButton.TextColor3 = themeList.TextColor
+        tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         Objects[tabButton] = "TextColor3"
         tabButton.TextSize = 14.000
         tabButton.BackgroundTransparency = 1
@@ -467,7 +467,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 page.BackgroundColor3 = themeList.Background
                 page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
-                tabButton.TextColor3 = themeList.TextColor
+                tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
                 tabButton.BackgroundColor3 = themeList.SchemeColor
             end
         end)()
@@ -561,7 +561,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = themeList.TextColor
+                tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end
