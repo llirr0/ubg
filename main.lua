@@ -462,15 +462,8 @@ function Kavo.CreateLib(kavName, themeList)
         local focusing = false
         local viewDe = false
 
-        coroutine.wrap(function()
-            while wait() do
-                page.BackgroundColor3 = themeList.Background
-                page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
-                tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-                tabButton.BackgroundColor3 = themeList.SchemeColor
-            end
-        end)()
-    
+		tabButton.BackgroundColor3 = themeList.SchemeColor  -- Фон вкладки (желтый)
+		tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)   -- Текст вкладки (желтый)
         function Sections:NewSection(secName, hidden)
             secName = secName or "Section"
             local sectionFunctions = {}
