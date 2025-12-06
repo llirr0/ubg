@@ -1,4 +1,4 @@
---// to the 2 peoplee who are constantly watching this repo, get a life yall weird!
+--// to the 2 peoplee who are constantly watching this repo, get a life yall weird.
 --// to the people who are still forking this unoptimized garbage, if you want a custom optimized rewrite for $, hmu on discord: federal6768 or federal.
 
 local Kavo = {}
@@ -60,10 +60,10 @@ local themes = {
 }
 local themeStyles = {
     DarkTheme = {
-        SchemeColor = Color3.fromRGB(255, 255, 0),
+        SchemeColor = Color3.fromRGB(64, 64, 64),
         Background = Color3.fromRGB(0, 0, 0),
         Header = Color3.fromRGB(0, 0, 0),
-        TextColor = Color3.fromRGB(0, 0, 0),
+        TextColor = Color3.fromRGB(255,255,255),
         ElementColor = Color3.fromRGB(20, 20, 20)
     },
     LightTheme = {
@@ -403,19 +403,18 @@ function Kavo.CreateLib(kavName, themeList)
         pageListing.SortOrder = Enum.SortOrder.LayoutOrder
         pageListing.Padding = UDim.new(0, 5)
 
-		tabButton.Name = tabName.."TabButton"
-		tabButton.Parent = tabFrames
-		tabButton.BackgroundColor3 = themeList.SchemeColor
-		Objects[tabButton] = "SchemeColor"
-		tabButton.Size = UDim2.new(0, 135, 0, 28)
-		tabButton.AutoButtonColor = false
-		tabButton.Font = Enum.Font.Gotham
-		tabButton.Text = tabName
-		tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)
-		Objects[tabButton] = "TextColor3"
-		tabButton.TextSize = 14.000
-		tabButton.BackgroundTransparency = 1
-
+        tabButton.Name = tabName.."TabButton"
+        tabButton.Parent = tabFrames
+        tabButton.BackgroundColor3 = themeList.SchemeColor
+        Objects[tabButton] = "SchemeColor"
+        tabButton.Size = UDim2.new(0, 135, 0, 28)
+        tabButton.AutoButtonColor = false
+        tabButton.Font = Enum.Font.Gotham
+        tabButton.Text = tabName
+        tabButton.TextColor3 = themeList.TextColor
+        Objects[tabButton] = "TextColor3"
+        tabButton.TextSize = 14.000
+        tabButton.BackgroundTransparency = 1
 
         if first then
             first = false
@@ -435,35 +434,44 @@ function Kavo.CreateLib(kavName, themeList)
         page.ChildAdded:Connect(UpdateSize)
         page.ChildRemoved:Connect(UpdateSize)
 
-		tabButton.MouseButton1Click:Connect(function()
-		    UpdateSize()
-		    for i,v in next, Pages:GetChildren() do
-		        v.Visible = false
-		    end
-		    page.Visible = true
-		    
-		    -- Для активной вкладки - черный текст на желтом фоне
-		    if themeList.SchemeColor == Color3.fromRGB(255,255,0) then -- Если схема желтая
-		        Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2) -- Черный текст
-		    end 
-		    Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2) -- Показать желтый фон
-		    
-		    -- Для неактивных вкладок - желтый текст на прозрачном фоне
-		    for i,v in next, tabFrames:GetChildren() do
-		        if v:IsA("TextButton") and v ~= tabButton then
-		            if themeList.SchemeColor == Color3.fromRGB(255,255,0) then
-		                Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255,255,0)}, 0.2) -- Желтый текст
-		            end
-		            Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2) -- Скрыть фон
-		        end
-		    end
-		end)
+        tabButton.MouseButton1Click:Connect(function()
+            UpdateSize()
+            for i,v in next, Pages:GetChildren() do
+                v.Visible = false
+            end
+            page.Visible = true
+            for i,v in next, tabFrames:GetChildren() do
+                if v:IsA("TextButton") then
+                    if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
+                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
+                    end 
+                    if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
+                        Utility:TweenObject(v, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
+                    end 
+                    Utility:TweenObject(v, {BackgroundTransparency = 1}, 0.2)
+                end
+            end
+            if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
+                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
+            end 
+            if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
+                Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
+            end 
+            Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2)
+        end)
         local Sections = {}
         local focusing = false
         local viewDe = false
 
-		tabButton.BackgroundColor3 = themeList.SchemeColor  -- Фон вкладки (желтый)
-		tabButton.TextColor3 = Color3.fromRGB(255, 255, 0)   -- Текст вкладки (желтый)
+        coroutine.wrap(function()
+            while wait() do
+                page.BackgroundColor3 = themeList.Background
+                page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
+                tabButton.TextColor3 = themeList.TextColor
+                tabButton.BackgroundColor3 = themeList.SchemeColor
+            end
+        end)()
+    
         function Sections:NewSection(secName, hidden)
             secName = secName or "Section"
             local sectionFunctions = {}
@@ -553,7 +561,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+                tabButton.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end
