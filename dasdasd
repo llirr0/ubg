@@ -590,7 +590,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                 buttonElement.Name = bname
                 buttonElement.Parent = sectionInners
-                buttonElement.BackgroundColor3 = themeList.ElementColor
+                buttonElement.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
                 buttonElement.ClipsDescendants = true
                 buttonElement.Size = UDim2.new(0, 352, 0, 33)
                 buttonElement.AutoButtonColor = false
@@ -611,7 +611,7 @@ function Kavo.CreateLib(kavName, themeList)
                 viewInfo.Size = UDim2.new(0, 23, 0, 23)
                 viewInfo.ZIndex = 2
                 viewInfo.Image = "rbxassetid://3926305904"
-                viewInfo.ImageColor3 = themeList.SchemeColor
+                viewInfo.ImageColor3 = Color3.fromRGB(0, 0, 0)
                 Objects[viewInfo] = "ImageColor3"
                 viewInfo.ImageRectOffset = Vector2.new(764, 764)
                 viewInfo.ImageRectSize = Vector2.new(36, 36)
@@ -756,7 +756,7 @@ function Kavo.CreateLib(kavName, themeList)
                 coroutine.wrap(function()
                     while wait() do
                         if not hovering then
-                            buttonElement.BackgroundColor3 = themeList.ElementColor
+                            buttonElement.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
                         end
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         Sample.ImageColor3 = themeList.SchemeColor
