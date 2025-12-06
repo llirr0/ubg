@@ -403,18 +403,28 @@ function Kavo.CreateLib(kavName, themeList)
         pageListing.SortOrder = Enum.SortOrder.LayoutOrder
         pageListing.Padding = UDim.new(0, 5)
 
-        tabButton.Name = tabName.."TabButton"
-        tabButton.Parent = tabFrames
-        tabButton.BackgroundColor3 = themeList.SchemeColor
-        Objects[tabButton] = "SchemeColor"
-        tabButton.Size = UDim2.new(0, 135, 0, 28)
-        tabButton.AutoButtonColor = false
-        tabButton.Font = Enum.Font.Gotham
-        tabButton.Text = tabName
-        tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        Objects[tabButton] = "TextColor3"
-        tabButton.TextSize = 14.000
-        tabButton.BackgroundTransparency = 1
+		tabButton.Name = tabName.."TabButton"
+		tabButton.Parent = tabFrames
+		tabButton.BackgroundColor3 = themeList.SchemeColor
+		Objects[tabButton] = "SchemeColor"
+		tabButton.Size = UDim2.new(0, 135, 0, 28)
+		tabButton.AutoButtonColor = false
+		tabButton.Font = Enum.Font.Gotham
+		tabButton.Text = tabName
+		tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Objects[tabButton] = "TextColor3"
+		tabButton.TextSize = 14.000
+		tabButton.BackgroundTransparency = 1
+		
+		tabButton.MouseButton1Click:Connect(function()
+		    for _, otherTab in pairs(tabFrames:GetChildren()) do
+		        if otherTab:IsA("TextButton") then
+		            otherTab.TextColor3 = Color3.fromRGB(255, 255, 0)
+		        end
+		    end
+		    tabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		end)
+
 
         if first then
             first = false
