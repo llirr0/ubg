@@ -411,7 +411,6 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
-        tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
         tabButton.TextSize = 14.000
         tabButton.BackgroundTransparency = 1
@@ -556,7 +555,6 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end
