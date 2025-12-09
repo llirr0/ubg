@@ -1297,7 +1297,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                 sliderDrag.Name = "sliderDrag"
                 sliderDrag.Parent = sliderBtn
-                sliderDrag.BackgroundColor3 = themeList.SchemeColor
+                sliderDrag.BackgroundColor3 = Color3.fromRGB(32, 32, 38)
                 sliderDrag.BorderColor3 = Color3.fromRGB(74, 99, 135)
                 sliderDrag.BorderSizePixel = 0
                 sliderDrag.Size = UDim2.new(-0.671140969, 100,1,0)
@@ -1394,7 +1394,7 @@ function Kavo.CreateLib(kavName, themeList)
                         togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         sliderBtn.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 5, themeList.ElementColor.g * 255 + 5, themeList.ElementColor.b * 255  + 5)
-                        sliderDrag.BackgroundColor3 = themeList.SchemeColor
+                        sliderDrag.BackgroundColor3 = Color3.fromRGB(32, 32, 38)
                     end
                 end)()
 
