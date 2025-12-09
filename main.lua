@@ -1031,7 +1031,7 @@ function Kavo.CreateLib(kavName, themeList)
                     togName.Font = Enum.Font.GothamSemibold
                     togName.Text = tname
                     togName.RichText = true
-                    togName.TextColor3 = themeList.TextColor
+                    togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                     togName.TextSize = 14.000
                     togName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1261,7 +1261,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = slidInf
                 togName.RichText = true
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1389,9 +1389,9 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                         moreInfo.TextColor3 = themeList.TextColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
-                        val.TextColor3 = themeList.TextColor
+                        val.TextColor3 = Color3.fromRGB(255, 255, 0)
                         write.ImageColor3 = themeList.SchemeColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         sliderBtn.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 5, themeList.ElementColor.g * 255 + 5, themeList.ElementColor.b * 255  + 5)
                         sliderDrag.BackgroundColor3 = themeList.SchemeColor
@@ -2265,7 +2265,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Size = UDim2.new(0, 288, 0, 14)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = colText
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.RichText = true
                 togName.TextXAlignment = Enum.TextXAlignment.Left
@@ -2470,7 +2470,7 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                         touch.ImageColor3 = themeList.SchemeColor
                         colorHeader.BackgroundColor3 = themeList.ElementColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                         viewInfo.ImageColor3 = themeList.SchemeColor
