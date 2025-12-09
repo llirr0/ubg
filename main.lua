@@ -60,10 +60,10 @@ local themes = {
 }
 local themeStyles = {
     DarkTheme = {
-        SchemeColor = Color3.fromRGB(64, 64, 64),
+        SchemeColor = Color3.fromRGB(255, 255, 0),
         Background = Color3.fromRGB(0, 0, 0),
         Header = Color3.fromRGB(0, 0, 0),
-        TextColor = Color3.fromRGB(255,255,255),
+        TextColor = Color3.fromRGB(0,0,0),
         ElementColor = Color3.fromRGB(20, 20, 20)
     },
     LightTheme = {
@@ -268,7 +268,7 @@ function Kavo.CreateLib(kavName, themeList)
     title.Font = Enum.Font.Gotham
     title.RichText = true
     title.Text = kavName
-    title.TextColor3 = Color3.fromRGB(245, 245, 245)
+    title.TextColor3 = Color3.fromRGB(255, 255, 0)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -281,6 +281,7 @@ function Kavo.CreateLib(kavName, themeList)
     close.Image = "rbxassetid://3926305904"
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
+	close.ImageColor3 = Color3.fromRGB(255, 255, 0)
     close.MouseButton1Click:Connect(function()
         game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 1
@@ -411,6 +412,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
+    --  tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
         tabButton.TextSize = 14.000
         tabButton.BackgroundTransparency = 1
@@ -555,6 +557,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
+          --    tabButton.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end
@@ -666,7 +669,7 @@ function Kavo.CreateLib(kavName, themeList)
                 btnInfo.Font = Enum.Font.GothamSemibold
                 btnInfo.Text = bname
                 btnInfo.RichText = true
-                btnInfo.TextColor3 = themeList.TextColor
+                btnInfo.TextColor3 = Color3.fromRGB(255, 255, 0)
                 Objects[btnInfo] = "TextColor3"
                 btnInfo.TextSize = 14.000
                 btnInfo.TextXAlignment = Enum.TextXAlignment.Left
@@ -760,7 +763,7 @@ function Kavo.CreateLib(kavName, themeList)
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                         touch.ImageColor3 = themeList.SchemeColor
-                        btnInfo.TextColor3 = themeList.TextColor
+                        btnInfo.TextColor3 = Color3.fromRGB(255, 255, 0)
                     end
                 end)()
                 
@@ -847,7 +850,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = tname
                 togName.RichText = true
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -959,7 +962,7 @@ function Kavo.CreateLib(kavName, themeList)
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                         write.ImageColor3 = themeList.SchemeColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         TextBox.PlaceholderColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 19, themeList.SchemeColor.g * 255 - 26, themeList.SchemeColor.b * 255 - 35)
                         TextBox.TextColor3 = themeList.SchemeColor
                     end
@@ -1166,7 +1169,7 @@ function Kavo.CreateLib(kavName, themeList)
                             end
                             toggleDisabled.ImageColor3 = themeList.SchemeColor
                             toggleEnabled.ImageColor3 = themeList.SchemeColor
-                            togName.TextColor3 = themeList.TextColor
+                            togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                             viewInfo.ImageColor3 = themeList.SchemeColor
                             Sample.ImageColor3 = themeList.SchemeColor
                             moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
@@ -1321,7 +1324,7 @@ function Kavo.CreateLib(kavName, themeList)
                 val.Size = UDim2.new(0, 41, 0, 14)
                 val.Font = Enum.Font.GothamSemibold
                 val.Text = minvalue
-                val.TextColor3 = themeList.TextColor
+                val.TextColor3 = Color3.fromRGB(255, 255, 0)
                 val.TextSize = 14.000
                 val.TextTransparency = 1.000
                 val.TextXAlignment = Enum.TextXAlignment.Right
@@ -1584,7 +1587,7 @@ function Kavo.CreateLib(kavName, themeList)
                 itemTextbox.Font = Enum.Font.GothamSemibold
                 itemTextbox.Text = dropname
                 itemTextbox.RichText = true
-                itemTextbox.TextColor3 = themeList.TextColor
+                itemTextbox.TextColor3 = Color3.fromRGB(255, 255, 0)
                 itemTextbox.TextSize = 14.000
                 itemTextbox.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1726,7 +1729,7 @@ function Kavo.CreateLib(kavName, themeList)
                     optionSelect.AutoButtonColor = false
                     optionSelect.Font = Enum.Font.GothamSemibold
                     optionSelect.Text = "  "..v
-                    optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
+                    optionSelect.TextColor3 = Color3.fromRGB(255, 255, 0)
                     optionSelect.TextSize = 14.000
                     optionSelect.TextXAlignment = Enum.TextXAlignment.Left
                     optionSelect.ClipsDescendants = true
@@ -2010,7 +2013,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = keytext
                 togName.RichText = true
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -2111,7 +2114,7 @@ function Kavo.CreateLib(kavName, themeList)
                         touch.ImageColor3 = themeList.SchemeColor
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         togName.BackgroundColor3 = themeList.TextColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         Sample.ImageColor3 = themeList.SchemeColor
                         moreInfo.TextColor3 = themeList.TextColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
