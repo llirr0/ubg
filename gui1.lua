@@ -850,7 +850,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = tname
                 togName.RichText = true
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
