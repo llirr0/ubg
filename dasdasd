@@ -962,7 +962,7 @@ function Kavo.CreateLib(kavName, themeList)
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                         write.ImageColor3 = themeList.SchemeColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         TextBox.PlaceholderColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 19, themeList.SchemeColor.g * 255 - 26, themeList.SchemeColor.b * 255 - 35)
                         TextBox.TextColor3 = themeList.SchemeColor
                     end
@@ -1169,7 +1169,7 @@ function Kavo.CreateLib(kavName, themeList)
                             end
                             toggleDisabled.ImageColor3 = themeList.SchemeColor
                             toggleEnabled.ImageColor3 = themeList.SchemeColor
-                            togName.TextColor3 = themeList.TextColor
+                            togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                             viewInfo.ImageColor3 = themeList.SchemeColor
                             Sample.ImageColor3 = themeList.SchemeColor
                             moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
@@ -1324,7 +1324,7 @@ function Kavo.CreateLib(kavName, themeList)
                 val.Size = UDim2.new(0, 41, 0, 14)
                 val.Font = Enum.Font.GothamSemibold
                 val.Text = minvalue
-                val.TextColor3 = themeList.TextColor
+                val.TextColor3 = Color3.fromRGB(255, 255, 0)
                 val.TextSize = 14.000
                 val.TextTransparency = 1.000
                 val.TextXAlignment = Enum.TextXAlignment.Right
@@ -1587,7 +1587,7 @@ function Kavo.CreateLib(kavName, themeList)
                 itemTextbox.Font = Enum.Font.GothamSemibold
                 itemTextbox.Text = dropname
                 itemTextbox.RichText = true
-                itemTextbox.TextColor3 = themeList.TextColor
+                itemTextbox.TextColor3 = Color3.fromRGB(255, 255, 0)
                 itemTextbox.TextSize = 14.000
                 itemTextbox.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1729,7 +1729,7 @@ function Kavo.CreateLib(kavName, themeList)
                     optionSelect.AutoButtonColor = false
                     optionSelect.Font = Enum.Font.GothamSemibold
                     optionSelect.Text = "  "..v
-                    optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
+                    optionSelect.TextColor3 = Color3.fromRGB(255, 255, 0)
                     optionSelect.TextSize = 14.000
                     optionSelect.TextXAlignment = Enum.TextXAlignment.Left
                     optionSelect.ClipsDescendants = true
@@ -2013,7 +2013,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = keytext
                 togName.RichText = true
-                togName.TextColor3 = themeList.TextColor
+                togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                 togName.TextSize = 14.000
                 togName.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -2114,7 +2114,7 @@ function Kavo.CreateLib(kavName, themeList)
                         touch.ImageColor3 = themeList.SchemeColor
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         togName.BackgroundColor3 = themeList.TextColor
-                        togName.TextColor3 = themeList.TextColor
+                        togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         Sample.ImageColor3 = themeList.SchemeColor
                         moreInfo.TextColor3 = themeList.TextColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
