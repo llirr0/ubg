@@ -590,7 +590,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                 buttonElement.Name = bname
                 buttonElement.Parent = sectionInners
-                buttonElement.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+                buttonElement.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 buttonElement.ClipsDescendants = true
                 buttonElement.Size = UDim2.new(0, 352, 0, 33)
                 buttonElement.AutoButtonColor = false
