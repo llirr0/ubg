@@ -1,4 +1,4 @@
---// to the 2 peoplee who are constantly watching this repo, get a life yall weird.
+ч--// to the 2 peoplee who are constantly watching this repo, get a life yall weird.
 --// to the people who are still forking this unoptimized garbage, if you want a custom optimized rewrite for $, hmu on discord: federal6768 or federal.
 
 local Kavo = {}
@@ -395,7 +395,7 @@ function Kavo.CreateLib(kavName, themeList)
         page.BorderSizePixel = 0
         page.Position = UDim2.new(0, 0, -0.00371747208, 0)
         page.Size = UDim2.new(1, 0, 1, 0)
-        page.ScrollBarThickness = 5
+        page.ScrollBarThickness = 0
         page.Visible = false
         page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
 
@@ -1297,7 +1297,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                 sliderDrag.Name = "sliderDrag"
                 sliderDrag.Parent = sliderBtn
-                sliderDrag.BackgroundColor3 = Color3.fromRGB(32, 32, 38)
+                sliderDrag.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
                 sliderDrag.BorderColor3 = Color3.fromRGB(74, 99, 135)
                 sliderDrag.BorderSizePixel = 0
                 sliderDrag.Size = UDim2.new(-0.671140969, 100,1,0)
@@ -1394,7 +1394,7 @@ function Kavo.CreateLib(kavName, themeList)
                         togName.TextColor3 = Color3.fromRGB(255, 255, 0)
                         viewInfo.ImageColor3 = themeList.SchemeColor
                         sliderBtn.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 5, themeList.ElementColor.g * 255 + 5, themeList.ElementColor.b * 255  + 5)
-                        sliderDrag.BackgroundColor3 = Color3.fromRGB(32, 32, 38)
+                        sliderDrag.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
                     end
                 end)()
 
